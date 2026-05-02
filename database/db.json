@@ -10,7 +10,7 @@
         "lng": 1,
         "zone": "Zone 1"
       },
-      "lastUpdate": 0
+      "lastUpdate": "2026-05-02T19:33:37.374Z"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
         "lng": 2,
         "zone": "Zone 2"
       },
-      "lastUpdate": 0
+      "lastUpdate": "2026-05-02T15:49:04.404Z"
     },
     {
       "id": "3",
@@ -34,7 +34,162 @@
         "lng": 3,
         "zone": "Zone 3"
       },
-      "lastUpdate": 0
+      "lastUpdate": "2026-05-02T16:58:54.503Z"
+    },
+    {
+      "id": "4",
+      "name": "Asset 4",
+      "type": "AIRCRAFT",
+      "status": "OFFLINE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 3"
+      },
+      "lastUpdate": "2026-05-02T14:59:34.019Z"
+    },
+    {
+      "id": "5",
+      "name": "Asset 5",
+      "type": "AIRCRAFT",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 3"
+      },
+      "lastUpdate": "2026-05-02T16:10:26.721Z"
+    },
+    {
+      "id": "6",
+      "name": "Asset 6",
+      "type": "NAVAL",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 3"
+      },
+      "lastUpdate": "2026-05-02T16:10:36.784Z"
+    },
+    {
+      "id": "7",
+      "name": "Asset 7",
+      "type": "EQUIPMENT",
+      "status": "OFFLINE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 1"
+      },
+      "lastUpdate": "2026-05-02T14:59:32.945Z",
+      "assignedUnit": 3
+    },
+    {
+      "id": "8",
+      "name": "Asset 8",
+      "type": "EQUIPMENT",
+      "status": "OFFLINE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 2"
+      },
+      "lastUpdate": "2026-05-02T14:59:32.411Z",
+      "assignedUnit": 2
+    },
+    {
+      "id": "9",
+      "name": "Asset 9",
+      "type": "EQUIPMENT",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 1"
+      },
+      "lastUpdate": "2026-05-02T16:59:03.143Z",
+      "assignedUnit": 1
+    },
+    {
+      "id": "10",
+      "name": "Asset 10",
+      "type": "VEHICLE",
+      "status": "MAINTENANCE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 2"
+      },
+      "lastUpdate": "2026-05-02T16:10:49.569Z"
+    },
+    {
+      "id": "11",
+      "name": "Asset 11",
+      "type": "AIRCRAFT",
+      "status": "MAINTENANCE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 3"
+      },
+      "lastUpdate": "2026-05-02T15:49:07.976Z"
+    }
+  ],
+  "aircrafts": [
+    {
+      "id": "001",
+      "registration_code": "I-ARFA",
+      "model": "A320neo",
+      "manufacturer": "Airbus",
+      "max_cargo_load": 2100,
+      "max_pax_load": 180,
+      "fuel_capacity": 26730
+    },
+    {
+      "id": "002",
+      "registration_code": "N-12345",
+      "model": "737 MAX 8",
+      "manufacturer": "Boeing",
+      "max_cargo_load": 3200,
+      "max_pax_load": 189,
+      "fuel_capacity": 25817
+    },
+    {
+      "id": "003",
+      "registration_code": "D-AIGW",
+      "model": "A350-900",
+      "manufacturer": "Airbus",
+      "max_cargo_load": 16000,
+      "max_pax_load": 350,
+      "fuel_capacity": 141000
+    },
+    {
+      "id": "004",
+      "registration_code": "G-VGIN",
+      "model": "787-9 Dreamliner",
+      "manufacturer": "Boeing",
+      "max_cargo_load": 15500,
+      "max_pax_load": 290,
+      "fuel_capacity": 126206
+    },
+    {
+      "id": "005",
+      "registration_code": "VH-OQA",
+      "model": "A380-800",
+      "manufacturer": "Airbus",
+      "max_cargo_load": 18400,
+      "max_pax_load": 525,
+      "fuel_capacity": 320000
+    },
+    {
+      "id": "006",
+      "registration_code": "F-GFTB",
+      "model": "777F",
+      "manufacturer": "Boeing",
+      "max_cargo_load": 102010,
+      "max_pax_load": 0,
+      "fuel_capacity": 181280
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

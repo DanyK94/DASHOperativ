@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { Dashboard } from './features/dashboard/dashboard';
-import { AssetsList } from './features/assets/assets-list/assets-list';
 
 
 export const routes: Routes = [
@@ -14,5 +12,10 @@ export const routes: Routes = [
         path: 'assets',
         loadComponent: () => import('./features/assets/assets-list/assets-list').then(m => m.AssetsList),
         title: 'Asset Operativi'
+    }, 
+    {
+        path: 'aircraft',
+        loadComponent: () => import('./features/aircraft/aircraft-list/aircraft-list/aircraft-list').then(m => m.AircraftList),
+        title: 'Aircrafts'
     }
 ];

@@ -1,0 +1,24 @@
+<div>
+    <table>
+        <thead>
+            <th>Reg. Code</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Max Cargo Load</th>
+            <th>Max Pax Load</th>
+            <th>Fuel Capacity</th>
+        </thead>
+        <tbody>
+            @for (ac of aircraftService.aircrafts(); track ac.id) {
+                <tr>
+                    <td>{{ac.registration_code}}</td>
+                    <td>{{ac.model}}</td>
+                    <td>{{ac.manufacturer}}</td>
+                    <td>{{ac.max_cargo_load}}</td>
+                    <td>{{ac.max_pax_load}}</td>
+                    <td>{{ac.fuel_capacity}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
