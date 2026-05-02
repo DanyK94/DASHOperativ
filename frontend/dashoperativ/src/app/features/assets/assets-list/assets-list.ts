@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AssetService } from '../../../core/services/asset';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-assets-list',
