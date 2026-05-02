@@ -19,6 +19,21 @@
                     <td>{{ac.fuel_capacity}}</td>
                 </tr>
             }
+            <button (click)="toggleAddRow()">
+                {{ showAddRow() ? 'Annulla' : 'Add Aircraft' }}
+            </button>
+            @if ( showAddRow() ) {
+                <tr [formGroup]="addAcForm">
+                    <td><input formControlName="registration_code" /></td>
+                    <td><input formControlName="model" /></td>
+                    <td><input formControlName="manufacturer" /></td>
+                    <td><input formControlName="max_cargo_load" /></td>
+                    <td><input formControlName="max_pax_load" /></td>
+                    <td><input formControlName="fuel_capacity" /></td>
+                    <td><button (click)="addAircraft()" [disabled]="addAcForm.invalid">✓</button></td>
+                </tr>
+            }
         </tbody>
     </table>
+
 </div>

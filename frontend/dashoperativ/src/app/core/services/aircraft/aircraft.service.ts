@@ -16,5 +16,17 @@ export class AircraftService {
   readonly aircrafts = computed(() => this.aricraftResources.value() ?? []);
   readonly isLoading = computed(() => this.aricraftResources.isLoading());
   readonly hasError = computed(() => this.aricraftResources.error());
+
+
+  addAircraft(aircraft: Aircraft) {
+    this.http.post<Aircraft>(this.apiUrl, aircraft).subscribe({
+      next: () => {
+        this.aricraftResources.reload();
+      },
+      error: (err) => {
+        console.error('Errore creazione aereo:',err);
+      }
+    })
+  }
   
 }

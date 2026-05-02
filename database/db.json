@@ -190,6 +190,15 @@
       "max_cargo_load": 102010,
       "max_pax_load": 0,
       "fuel_capacity": 181280
+    },
+    {
+      "registration_code": "B-GFTB",
+      "model": "777F",
+      "manufacturer": "Boeing",
+      "max_cargo_load": "102010",
+      "max_pax_load": "0",
+      "fuel_capacity": "181280",
+      "id": "LcBAH2biJd0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
