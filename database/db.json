@@ -1,0 +1,41 @@
+{
+  "assets": [
+    {
+      "id": "1",
+      "name": "Asset 1",
+      "type": "VEHICLE",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 1,
+        "lng": 1,
+        "zone": "Zone 1"
+      },
+      "lastUpdate": 0
+    },
+    {
+      "id": "2",
+      "name": "Asset 2",
+      "type": "VEHICLE",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 2,
+        "lng": 2,
+        "zone": "Zone 2"
+      },
+      "lastUpdate": 0
+    },
+    {
+      "id": "3",
+      "name": "Asset 3",
+      "type": "VEHICLE",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 3,
+        "lng": 3,
+        "zone": "Zone 3"
+      },
+      "lastUpdate": 0
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

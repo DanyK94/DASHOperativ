@@ -1,22 +1,28 @@
 import { Component, inject } from '@angular/core';
 import { AssetService } from '../../../core/services/asset';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-assets-list',
   standalone: true,
   template: `
-    <h2>Asset Operativi</h2>
-    @for (asset of assetService.assets(); track asset.id) {
-      <div>
-        <strong> {{asset.name}}</strong>
-        - {{asset.type}}
-        - {{asset.status}}
-        - {{asset.location.zone}}
-        <button (click)="simulateToggle(asset.id)">Toggle Status</button>
-      </div>
-    } @empty {
-      <p>Nessun asset disponibile</p>
+    <h2>Asset Operativi ({{ assetService.activeCount() }} attivi )</h2>
+    @if (assetService.isLoading()) {
+      <p>Caricamento in corso...</p>
+    } @else if (assetService.hasError()) {
+      <p>Si è verificato un errore: {{ assetService.hasError() }}</p> }
+    @else {  
+      @for (asset of assetService.assets(); track asset.id) {
+        <div>
+          <strong> {{asset.name}}</strong>
+          - {{asset.type}}
+          - {{asset.status}}
+          - {{asset.location.zone}}
+          <button (click)="simulateToggle(asset.id)">Toggle Status</button>
+        </div>
+      } @empty {
+        <p>Nessun asset disponibile</p>
+      }
     }
   `,
 

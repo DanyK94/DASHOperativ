@@ -1,26 +1,37 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject, resource } from '@angular/core';
 import { Asset, AssetStatus } from '../models/asset.model';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 
 @Injectable({providedIn: 'root',})
 export class AssetService {
-  private readonly _assets = signal<Asset[]>([
-    {id: '1', name: 'Asset 1', type: 'VEHICLE', status: 'ACTIVE', location: {lat: 1 , lng: 1, zone: 'Zone 1'}, lastUpdate: new Date()},
-    {id: '2', name: 'Asset 2', type: 'AIRCRAFT', status: 'MAINTENANCE', location: {lat: 2 , lng: 2, zone: 'Zone 2'}, lastUpdate: new Date()},
-    {id: '3', name: 'Asset 3', type: 'NAVAL', status: 'OFFLINE', location: {lat: 3 , lng: 3, zone: 'Zone 3'}, lastUpdate: new Date()}
-  ]);
 
-  readonly assets = this._assets.asReadonly();
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = '/api/assets';
 
-  readonly activeCount = computed(() => this._assets().filter(a => a.status === 'ACTIVE').length);
+  readonly assetsResources = resource({
+    loader: () => firstValueFrom( this.http.get<Asset[]>(this.apiUrl) )
+  });
 
-  addAsset(asset: Asset) {
-    this._assets.update(list => [...list, asset])
+
+  readonly assets = computed(() => this.assetsResources.value() ?? []);
+  readonly isLoading = computed(() => this.assetsResources.isLoading());
+  readonly hasError = computed(() => this.assetsResources.error());
+
+  readonly activeCount = computed(() => this.assets().filter(a => a.status === 'ACTIVE').length);
+
+  updateStatus(id: string, status: AssetStatus) : void {
+    const asset = this.assets().find(a => a.id === id);
+    if (!asset) return;
+
+    this.http.patch<Asset>(`${this.apiUrl}/${id}`, {status}).subscribe({
+      next: () => {
+        this.assetsResources.reload();
+      },
+      error: (err) => {
+        console.error('Errore aggiornamento status:',err);
+      }
+    })
   }
-  updateStatus(id: string, status: AssetStatus) {
-    this._assets.update(assets =>
-     assets.map( a => a.id === id ? { ...a, status, lastUpdate: new Date ()} : a)
-    );
-  }
-
 }
