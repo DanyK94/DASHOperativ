@@ -9,9 +9,11 @@ import { AssetService } from '../../../core/services/asset';
     <h2>Asset Operativi ({{ assetService.activeCount() }} attivi )</h2>
     @if (assetService.isLoading()) {
       <p>Caricamento in corso...</p>
-    } @else if (assetService.hasError()) {
-      <p>Si è verificato un errore: {{ assetService.hasError() }}</p> }
-    @else {  
+    } 
+    @else if ( assetService.hasError() ) {
+      <p>Si è verificato un errore: {{ assetService.hasError() }}</p> 
+    }
+    @else {
       @for (asset of assetService.assets(); track asset.id) {
         <div>
           <strong> {{asset.name}}</strong>
@@ -20,7 +22,9 @@ import { AssetService } from '../../../core/services/asset';
           - {{asset.location.zone}}
           <button (click)="simulateToggle(asset.id)">Toggle Status</button>
         </div>
-      } @empty {
+        }
+    @empty 
+      {
         <p>Nessun asset disponibile</p>
       }
     }
