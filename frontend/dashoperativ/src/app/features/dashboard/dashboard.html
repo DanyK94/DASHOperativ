@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<p>Assets dashboard</p>
+<table class="assets-table">
+    <thead>
+        <tr>
+            <th>ASSET</th>
+            <th>N° ACTIVE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th> VEHICLES </th>
+            <td> {{ getCountActiveAssets('VEHICLE') }} </td>
+        </tr>
+        <tr>
+            <th> AIRCRAFT </th>
+            <td> {{ getCountActiveAssets('AIRCRAFT') }} </td>
+        </tr>
+        <tr>
+            <th> NAVAL </th>
+            <td> {{ getCountActiveAssets('NAVAL') }} </td>
+        </tr>
+        <tr>
+            <th> EQUIPMENT </th>
+            <td> {{ getCountActiveAssets('EQUIPMENT') }} </td>
+        </tr>
+    </tbody>
+</table>

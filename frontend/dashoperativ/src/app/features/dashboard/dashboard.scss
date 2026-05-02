@@ -1,0 +1,11 @@
+.assets-table{
+    border-collapse: collapse;
+    background-color: rgb(184, 184, 255);
+    border: 2px solid black;
+    
+}
+.assets-table th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
