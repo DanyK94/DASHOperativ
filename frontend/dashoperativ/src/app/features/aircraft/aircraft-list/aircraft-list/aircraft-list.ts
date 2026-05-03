@@ -1,6 +1,7 @@
 import { Component, inject, model, signal } from '@angular/core';
 import { AircraftService } from '../../../../core/services/aircraft/aircraft.service';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { CreateAircraftDto } from '@core/models/aircraft.model';
 
 
 @Component({
@@ -24,17 +25,32 @@ export class AircraftList {
 
   protected addAircraft(): void {
     if (this.addAcForm.invalid) return;
-    this.aircraftService.addAircraft(this.addAcForm.value as any);
+    this.aircraftService.addAircraft(this.addAcForm.value as CreateAircraftDto);
     this.addAcForm.reset();
   }
 
 
   protected showAddRow = signal(false);
+  protected selectedId = signal<string | null>(null);
+
 
   protected toggleAddRow(): void {
     this.showAddRow.update(v => !v);
     if (!this.showAddRow()) this.addAcForm.reset();
   }
+
+
+  protected selectRow(id: string): void {
+    this.selectedId.set(id);
+  }
+
+  protected deleteAircraft(): void {
+    if (!this.selectedId()) return;
+    console.log(this.selectedId())
+    this.aircraftService.deleteAircraft(this.selectedId() || '');
+    this.selectedId.set(null);
+  }
+
 
 
 

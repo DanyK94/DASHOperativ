@@ -1,29 +1,37 @@
 <div>
     <table>
         <thead>
+            <th>ID</th>
             <th>Reg. Code</th>
             <th>Model</th>
             <th>Manufacturer</th>
             <th>Max Cargo Load</th>
             <th>Max Pax Load</th>
             <th>Fuel Capacity</th>
+            <th></th>
         </thead>
         <tbody>
             @for (ac of aircraftService.aircrafts(); track ac.id) {
-                <tr>
+                <tr class="row-item-selectable" (click)="selectRow(ac.id)" [class.selected]="selectedId() === ac.id">
+                    <td>{{ac.id}}</td>
                     <td>{{ac.registration_code}}</td>
                     <td>{{ac.model}}</td>
                     <td>{{ac.manufacturer}}</td>
                     <td>{{ac.max_cargo_load}}</td>
                     <td>{{ac.max_pax_load}}</td>
                     <td>{{ac.fuel_capacity}}</td>
+                    <td>
+                        @if (selectedId() === ac.id) {
+                            <button (click)="deleteAircraft()">DEL</button>
+                        }
+                    </td>
                 </tr>
             }
-            <button (click)="toggleAddRow()">
-                {{ showAddRow() ? 'Annulla' : 'Add Aircraft' }}
-            </button>
             @if ( showAddRow() ) {
                 <tr [formGroup]="addAcForm">
+                    <td><button (click)="toggleAddRow()">
+                        {{ showAddRow() ? 'Annulla' : 'Add Aircraft' }}
+                    </button></td>
                     <td><input formControlName="registration_code" /></td>
                     <td><input formControlName="model" /></td>
                     <td><input formControlName="manufacturer" /></td>
@@ -32,8 +40,14 @@
                     <td><input formControlName="fuel_capacity" /></td>
                     <td><button (click)="addAircraft()" [disabled]="addAcForm.invalid">✓</button></td>
                 </tr>
+            } @else {
+                <tr>
+                    <td><button (click)="toggleAddRow()">
+                        {{ showAddRow() ? 'Annulla' : 'Add Aircraft' }}
+                    </button></td>
+                </tr>
             }
         </tbody>
     </table>
 
-</div>
+</div> 

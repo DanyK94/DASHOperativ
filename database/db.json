@@ -22,7 +22,7 @@
         "lng": 2,
         "zone": "Zone 2"
       },
-      "lastUpdate": "2026-05-02T15:49:04.404Z"
+      "lastUpdate": "2026-05-03T08:50:49.248Z"
     },
     {
       "id": "3",
@@ -199,6 +199,15 @@
       "max_pax_load": "0",
       "fuel_capacity": "181280",
       "id": "LcBAH2biJd0"
+    },
+    {
+      "registration_code": "VH-CQB",
+      "model": "A380-800",
+      "manufacturer": "Airbus",
+      "max_cargo_load": "18400",
+      "max_pax_load": "525",
+      "fuel_capacity": "320000",
+      "id": "E6DGrx6HF7U"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -6,7 +6,7 @@ import { firstValueFrom } from 'rxjs';
 @Injectable({providedIn: 'root',})
 export class AircraftService {
 
-  private readonly apiUrl = 'api/aircrafts';
+  private readonly apiUrl = '/api/aircrafts';
   private readonly http = inject(HttpClient);
 
   readonly aricraftResources = resource({
@@ -25,6 +25,17 @@ export class AircraftService {
       },
       error: (err) => {
         console.error('Errore creazione aereo:',err);
+      }
+    })
+  }
+
+  deleteAircraft(id: string) {
+    this.http.delete(`${this.apiUrl}/${id}`).subscribe({
+      next: () => {
+        this.aricraftResources.reload();
+      },
+      error: (err) => {
+        console.error('Errore cancellazione aereo:',err);
       }
     })
   }
