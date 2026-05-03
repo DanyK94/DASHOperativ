@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { AssetService } from '../../../core/services/asset';
 import { AssetStatusPipe } from '../../../core/pipes/asset-status.pipe';
+import { RouterLink, RouterModule } from "@angular/router";
 
 
 @Component({
   selector: 'app-assets-list',
   standalone: true,
-  imports: [AssetStatusPipe],
+  imports: [AssetStatusPipe, RouterLink, RouterModule],
   templateUrl: './assets-list.html',
   styleUrl: './assets-list.scss',
 })

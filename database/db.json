@@ -4,13 +4,13 @@
       "id": "1",
       "name": "Asset 1",
       "type": "VEHICLE",
-      "status": "ACTIVE",
+      "status": "MAINTENANCE",
       "location": {
         "lat": 1,
         "lng": 1,
         "zone": "Zone 1"
       },
-      "lastUpdate": "2026-05-02T19:33:37.374Z"
+      "lastUpdate": "2026-05-03T13:59:38.472Z"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
         "lng": 2,
         "zone": "Zone 2"
       },
-      "lastUpdate": "2026-05-03T08:50:49.248Z"
+      "lastUpdate": "2026-05-03T12:32:33.810Z"
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
         "lng": 3,
         "zone": "Zone 3"
       },
-      "lastUpdate": "2026-05-02T16:58:54.503Z"
+      "lastUpdate": "2026-05-03T12:32:34.916Z"
     },
     {
       "id": "4",

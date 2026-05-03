@@ -1,16 +1,27 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { AssetService } from './asset';
+import { provideHttpClient } from '@angular/common/http';
 
-import { Asset } from './asset';
+describe('AssetService', () => {
+  let service: AssetService;
+  let httpMock: HttpTestingController;
 
-describe('Asset', () => {
-  let service: Asset;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Asset);
+    TestBed.configureTestingModule({
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting()
+      ]
+    });
+    service = TestBed.inject(AssetService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('filteredAssets return only active assets when ACTIVE filter is set', () => {
+    service.setStatusFilter('ACTIVE');
+
+    expect(service.filteredAssets().every(a => a.status === 'ACTIVE')).toBe(true);
   });
 });

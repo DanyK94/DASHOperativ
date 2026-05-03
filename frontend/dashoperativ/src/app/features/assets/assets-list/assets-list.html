@@ -20,6 +20,7 @@
           - {{asset.location.zone}}
           <button (click)="simulateToggle(asset.id)">Toggle Status</button>
           <button (click)="setMaintenance(asset.id)"> Set Maintenance</button>
+          <button [routerLink]="['/assets', asset.id]">Dettagli</button>
         </div>
         }
     @empty 
