@@ -1,5 +1,5 @@
 export interface Aircraft {
-    id?: string;
+    id: string;
     registration_code: string;
     model: string;
     manufacturer: string;

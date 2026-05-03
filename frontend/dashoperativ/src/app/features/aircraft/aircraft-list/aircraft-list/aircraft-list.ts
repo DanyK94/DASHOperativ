@@ -1,7 +1,7 @@
 import { Component, inject, model, signal } from '@angular/core';
 import { AircraftService } from '../../../../core/services/aircraft/aircraft.service';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { CreateAircraftDto } from '@core/models/aircraft.model';
+import { Aircraft, CreateAircraftDto } from '@core/models/aircraft.model';
 
 
 @Component({
@@ -25,7 +25,8 @@ export class AircraftList {
 
   protected addAircraft(): void {
     if (this.addAcForm.invalid) return;
-    this.aircraftService.addAircraft(this.addAcForm.value as CreateAircraftDto);
+    const newAc = this.addAcForm.value as Aircraft;
+    this.aircraftService.addAircraft(newAc);
     this.addAcForm.reset();
   }
 
