@@ -1,7 +1,7 @@
 import { Component, inject, model, signal } from '@angular/core';
 import { AircraftService } from '../../../../core/services/aircraft/aircraft.service';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Aircraft, CreateAircraftDto } from '@core/models/aircraft.model';
+import { Aircraft} from '@core/models/aircraft.model';
 
 
 @Component({
@@ -13,6 +13,7 @@ import { Aircraft, CreateAircraftDto } from '@core/models/aircraft.model';
 })
 export class AircraftList {
   protected aircraftService = inject(AircraftService);
+
 
   protected addAcForm = new FormGroup({
     registration_code: new FormControl('', Validators.required),

@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { AssetService } from '../../../core/services/asset';
+import { AssetStatusPipe } from '../../../core/pipes/asset-status.pipe';
 
 
 @Component({
   selector: 'app-assets-list',
   standalone: true,
+  imports: [AssetStatusPipe],
   templateUrl: './assets-list.html',
   styleUrl: './assets-list.scss',
 })
