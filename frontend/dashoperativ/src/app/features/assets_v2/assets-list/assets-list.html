@@ -1,0 +1,59 @@
+<h2>ASSETS</h2>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID Asset</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Zone</th>
+            <th>Assigned To</th>            
+        <tr>
+    </thead>
+    <tbody>
+        @for ( ass of assetService.assets(); track ass.id) 
+        {
+            <tr (click)="setActiveRow(ass.id)" [class.selected]="activeId() === ass.id">
+                <td>{{ass.id_asset}}</td>
+                <td>{{ass.type}}</td>
+                <td>{{ass.status}}</td>
+                <td>{{ass.zone}}</td>
+                <td>{{ass.assignedTo}}</td>
+            </tr> 
+            @if ( activeId() === ass.id)
+            {
+                @switch (ass.type) 
+                {
+                    @case ('AIRCRAFT') 
+                    {
+                        <tr>
+                            <td>REG CODE</td>
+                            <td>MODEL</td>
+                            <td>MANUFACTURER</td>
+                            <td>MAX CARGO LOAD</td>
+                            <td>MAX PAX LOAD</td>
+                            <td>FUEL CAPACITY</td>
+                        </tr>
+                        <tr>
+                            <td>{{getAircraftById(ass.id_asset)?.registration_code}}</td>
+                            <td>{{getAircraftById(ass.id_asset)?.model}}</td>
+                            <td>{{getAircraftById(ass.id_asset)?.manufacturer}}</td>
+                            <td>{{getAircraftById(ass.id_asset)?.max_cargo_load}}</td>
+                            <td>{{getAircraftById(ass.id_asset)?.max_pax_load}}</td>
+                            <td>{{getAircraftById(ass.id_asset)?.fuel_capacity}}</td>
+                        </tr>
+                    }
+
+                }
+            }          
+        }
+    </tbody>
+</table>
+    <div>
+        <app-new-asset></app-new-asset>
+    </div>
+
+    <div>
+        <h3>Active Row: {{ activeId() }}</h3>
+    </div>

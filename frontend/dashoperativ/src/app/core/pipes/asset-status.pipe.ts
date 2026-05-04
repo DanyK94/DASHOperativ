@@ -1,5 +1,5 @@
 import { Pipe , PipeTransform } from "@angular/core";
-import { AssetStatus } from "@core/models/asset.model";
+import { AssetStatus } from "@core/models/asset_v1.model";
 
 @Pipe({ name:'assetStatus', standalone: true })
 

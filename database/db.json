@@ -1,5 +1,5 @@
 {
-  "assets": [
+  "assets_v1": [
     {
       "id": "1",
       "name": "Asset 1",
@@ -208,6 +208,28 @@
       "max_pax_load": "525",
       "fuel_capacity": "320000",
       "id": "E6DGrx6HF7U"
+    }
+  ],
+  "assets": [
+    {
+      "id": "TEST001",
+      "id_asset": "E6DGrx6HF7U",
+      "type": "AIRCRAFT",
+      "status": "ACTIVE",
+      "zone": "Zone 1",
+      "assignedTo": "test_responsable",
+      "lastUpdate": "2026-05-02T15:49:07.976Z"
+
+    },
+    {
+      "id": "TEST002",
+      "id_asset": "LcBAH2biJd0",
+      "type": "AIRCRAFT",
+      "status": "ACTIVE",
+      "zone": "Zone 2",
+      "assignedTo": "test_responsable",
+      "lastUpdate": "2026-05-02T15:49:07.976Z"
+
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

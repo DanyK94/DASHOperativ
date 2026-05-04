@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AssetService } from '../../../core/services/asset';
+import { AssetService } from '../../../core/services/asset_v1';
 import { AssetStatusPipe } from '../../../core/pipes/asset-status.pipe';
 import { RouterLink, RouterModule } from "@angular/router";
 

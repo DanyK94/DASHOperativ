@@ -17,6 +17,11 @@ export class AircraftService {
   readonly isLoading = computed(() => this.aricraftResources.isLoading());
   readonly hasError = computed(() => this.aricraftResources.error());
 
+  getAircraftById(id: string) {
+    return this.aircrafts().find(a => a.id === id);
+  }
+
+
 
   addAircraft(aircraft: Aircraft) {
     this.http.post<Aircraft>(this.apiUrl, aircraft).subscribe({

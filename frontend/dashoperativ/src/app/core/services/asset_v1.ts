@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, inject, resource } from '@angular/core';
-import { Asset, AssetStatus, AssetType } from '../models/asset.model';
+import { Asset, AssetStatus, AssetType } from '../models/asset_v1.model';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 

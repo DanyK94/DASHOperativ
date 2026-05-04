@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { AssetService } from '../../core/services/asset';
-import { AssetType } from '../../core/models/asset.model';
+import { AssetService } from '../../core/services/asset_v1';
+import { AssetType } from '../../core/models/asset_v1.model';
 
 @Component({
   selector: 'app-dashboard',

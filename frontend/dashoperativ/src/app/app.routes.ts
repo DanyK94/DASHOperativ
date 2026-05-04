@@ -12,7 +12,7 @@ export const routes: Routes = [
     {
         path: 'assets',
         canActivate: [authGuard],
-        loadComponent: () => import('./features/assets/assets-list/assets-list').then(m => m.AssetsList),
+        loadComponent: () => import('./features/assets_v2/assets-list/assets-list').then(m => m.AssetsList),
         title: 'Asset Operativi'
     }, 
     {
@@ -24,5 +24,10 @@ export const routes: Routes = [
         path: 'assets/:id',
         loadComponent: () => import('./features/assets/asset-details/asset-details').then(m => m.AssetDetails),
         title: 'Asset Details'
+    },
+    {
+        path: 'assets/new',
+        loadComponent: () => import('./features/assets/new-asset/new-asset').then(m => m.NewAsset),
+        title: 'New Asset'
     }
 ];

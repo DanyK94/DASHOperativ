@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { AssetService } from './asset';
+import { AssetService } from './asset_v1';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('AssetService', () => {

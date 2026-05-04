@@ -1,5 +1,5 @@
 import { Component, input, inject, computed } from '@angular/core';
-import { AssetService } from '@core/services/asset';
+import { AssetService } from '@core/services/asset_v1';
 
 
 @Component({
