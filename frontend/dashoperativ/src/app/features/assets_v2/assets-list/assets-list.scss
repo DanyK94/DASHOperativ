@@ -1,3 +1,15 @@
+.component-container{
+    background-color: var(--secondary-background-color);
+    border: 2px solid #262b33;
+    margin: 10px;
+    padding: 20px;
+    
+    border-radius: 20px;
+
+    color: var(--text-color-main);
+    
+}
+
 tr.selected{
-    background: #6565b1;
+    background: var(--sel-backgrnd-color-sec);
 }

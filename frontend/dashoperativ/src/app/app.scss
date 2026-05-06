@@ -1,15 +1,40 @@
-.main-container {
+html, body {
     height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    background-color: #0f172a;
-    color: #f1f5f9;
-    font-family: Inter, sans-serif;
+    margin: 0;
+    overflow: hidden;
 }
-.main-navbar {
-    width: 100%;
+
+.layout {
+    display: grid;
+
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr;
+
+    grid-template-areas: "sidebar topbar" "sidebar content";
+
+    height: 100vh;
+
+    gap: 0;
+
+
+
+    background-color: var(--primary-background-color);
+    font-family: var(--text-font-main);
+    
 }
-.main-container{
-    padding: 20px;
+
+.sidebar {
+    grid-area: sidebar;
+
+    height: 100vh;
 }
+
+.topbar {
+    grid-area: topbar;
+}
+
+.content {
+    grid-area: content;
+    overflow: auto;
+    padding: 16px;
+};

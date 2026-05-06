@@ -1,0 +1,7 @@
+
+<div class="top-bar">
+    <p>test</p>
+    @for (crumb of breadcrumbService.breadcrumbs(); track crumb.url) {
+        <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+    }
+</div>

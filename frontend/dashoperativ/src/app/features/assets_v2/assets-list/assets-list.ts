@@ -9,7 +9,7 @@ import { NewAsset } from "../../assets/new-asset/new-asset";
 @Component({
   selector: 'app-assets-list',
   standalone: true,
-  imports: [RouterLink, RouterModule, NewAsset],
+  imports: [RouterModule, NewAsset],
   templateUrl: './assets-list.html',
   styleUrl: './assets-list.scss',
 })
